@@ -1,15 +1,14 @@
-"""کلیک روی گزینهٔ صدور در منوی بیمه‌های مسئولیت."""
+"""صدور ← مسئولیت حمل و نقل در منوی بیمه‌های مسئولیت."""
 import sys
 import time
 from pathlib import Path
-
-import pyautogui
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from bot import winbot
 
 APP = "Bime"
+TARGET = "مسئولیت حمل و نقل"
 
 winbot.configure(app=APP, click_mode="mouse", pause=0.5)
 winbot.wait_for_content("بیمه های مسئولیت", timeout=30)
@@ -17,7 +16,6 @@ time.sleep(1)
 
 
 def menu_state(el_id: str) -> str:
-    """وضعیت آیتم منو را از خروجی خام winapp می‌خواند: collapsed / expanded / ?"""
     raw = winbot._winapp(["ui", "inspect", "-a", APP, "--depth", "100"])
     for line in raw.splitlines():
         if el_id in line:
@@ -28,12 +26,26 @@ def menu_state(el_id: str) -> str:
     return "?"
 
 
-el = winbot.find("صدور", role="MenuItem")
+def target_visible() -> bool:
+    try:
+        return winbot.is_visible(TARGET)
+    except winbot.ElementNotFound:
+        return False
 
-if menu_state(el.id) == "expanded":
-    print("منوی صدور از قبل باز است.")
-else:
-    winbot.click("صدور", role="MenuItem")
-    time.sleep(1)
-    winbot.click("", role="MenuItem")
-    print("وضعیت بعد از کلیک:", menu_state(el.id))
+
+issue = winbot.find("صدور", role="MenuItem")
+
+
+if not target_visible():
+    winbot.click(issue.id)
+    for _ in range(10):
+        time.sleep(0.5)
+        if target_visible():
+            break
+    print("وضعیت صدور:", menu_state(issue.id))
+
+if not target_visible():
+    raise SystemExit(f"{TARGET!r} بعد از باز کردن صدور دیده نشد")
+
+winbot.click(TARGET)
+print("کلیک شد روی:", TARGET)

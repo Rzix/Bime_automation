@@ -11,11 +11,11 @@ from pywinauto.application import Application
 from pywinauto.findwindows import ElementAmbiguousError
 from pywinauto.keyboard import send_keys
 
-# USERNAME = "H.Azizi"
-USERNAME = "F.Sayare"
+USERNAME = "H.Azizi"
+# USERNAME = "F.Sayare"
 
-# PASSWORD = os.environ.get("BIME_PASSWORD","Ha@26652665")
-PASSWORD = os.environ.get("BIME_PASSWORD","Fs@26652665")
+PASSWORD = os.environ.get("BIME_PASSWORD","Ha@26652665")
+# PASSWORD = os.environ.get("BIME_PASSWORD","Fs@26652665")
 
 SUBMIT_TITLE = "ورود"                                   # دکمهٔ «ورود» (مراحل ۱ تا ۳)
 # \W* = هر فاصله/نویسهٔ نامرئی (ZWNJ, RLM, ...) را نادیده می‌گیرد
