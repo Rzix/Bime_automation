@@ -1,0 +1,9 @@
+﻿# Python packages required by Bime automation scripts
+pywinauto>=0.6.8
+pyautogui>=0.9.54
+pyperclip>=1.9.0
+
+# Notes:
+# - winapp CLI tool is provided by winapp.py (included in this repo)
+#   which wraps pywinauto under the hood.
+# - pip install --upgrade pip && pip install -r requirements.txt

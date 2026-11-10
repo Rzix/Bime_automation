@@ -19,9 +19,12 @@ winbot.py - ماژول کمکی برای اتوماسیون برنامهٔ وی�
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
+import sys
 import time
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional
 
 __all__ = [
@@ -56,9 +59,23 @@ def _norm(text: str) -> str:
                     .replace("\u200c", " ").split())
 
 
+def _winapp_command() -> list[str]:
+    """اگر winapp.py در پوشهٔ بالاتر باشد از آن، وگرنه از winapp.exe نصب‌شده استفاده می‌کند."""
+    script = Path(__file__).resolve().parent.parent / "winapp.py"
+    if script.is_file():
+        return [sys.executable, str(script)]
+    exe = shutil.which("winapp")
+    if exe:
+        return [exe]
+    raise FileNotFoundError(
+        "winapp پیدا نشد: نه winapp.py کنار پروژه هست و نه winapp در PATH. "
+        "نصب: winget install --id Microsoft.WinAppCli --source winget"
+    )
+
+
 def _winapp(args: list[str]) -> str:
     r = subprocess.run(
-        ["winapp", *args],
+        [*_winapp_command(), *args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
     if r.returncode != 0:
@@ -223,7 +240,6 @@ def populate_text(text: str, element: str, mode: str = "replace",
     return el
 
 
-
 def wait_for_content(text: str, timeout: float = 30, interval: float = 0.5) -> bool:
     """
     منتظر می‌ماند تا text در درخت UI برنامه ظاهر شود.
@@ -234,7 +250,6 @@ def wait_for_content(text: str, timeout: float = 30, interval: float = 0.5) -> b
     end = time.monotonic() + timeout
     while True:
         raw = _winapp(["ui", "inspect", "-a", _cfg["app"], "--depth", str(_cfg["depth"])])
-        # خطوط شکسته را یکی می‌کنیم تا متن بین دو خط گم نشود
         if key in _norm(raw):
             return True
         if time.monotonic() >= end:

@@ -15,6 +15,7 @@ SCRIPTS = [
     "showTabel/step1.py",
     "showTabel/step2.py",
     "showTabel/step3.py",
+    "made_elhaghie/step1.py",
 ]
 DELAY = 1.0          # مکث بین اسکریپت‌ها (ثانیه)
 STOP_ON_ERROR = True # اگر False باشد، با خطا هم ادامه می‌دهد

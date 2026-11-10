@@ -1,0 +1,1 @@
+['-a', 'Bime']: rc=1 chars=0 stderr={"error":{"code":"internal_error","message":"No running app found matching \u0027Bime\u0027.","details":"AppNotFoundException"}}

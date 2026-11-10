@@ -1,0 +1,29 @@
+main HWND=2360974 PID=15820 class='HwndWrapper[Bime.exe;;930bd2a1-26eb-446d-b889-723db7bbd803]' rect=(0,0,1536x816)
+
+== HWND های فرزند (کلاس‌ها فناوری میزبان را نشان می‌دهند) ==
+هیچ HWND فرزندی نیست (کنترل‌ها احتمالاً بدون HWND و رندر شده‌اند: WPF/Skia/…).
+
+== سایر پنجره‌های سطح‌بالای همین پروسه ==
+HWND=460988 class='GDI+ Hook Window Class' vis=False rect=(0,0,1x1) text='GDI+ Window (Bime.exe)'
+HWND=10553250 class='WPFTaskbarIcon_639299380785717302' vis=False rect=(0,0,133x38) text=''
+HWND=853668 class='HwndWrapper[Bime.exe;;676934f7-41ce-4584-b6ec-30e97cfc7e39]' vis=False rect=(0,0,0x0) text='SystemResourceNotifyWindow'
+HWND=3540798 class='HwndWrapper[Bime.exe;;3293baa0-6775-4834-af8a-f4cc0b2db1cf]' vis=False rect=(0,0,0x0) text='MediaContextNotificationWindow'
+HWND=461002 class='HwndWrapper[Bime.exe;;2e06b812-e34b-48fb-81a5-e1a9fdb21f66]' vis=False rect=(0,0,133x38) text=''
+HWND=852554 class='HwndWrapper[Bime.exe;;ad83d7aa-a54b-4af2-a01b-eadb5a0d6f28]' vis=False rect=(0,0,133x38) text=''
+HWND=1377866 class='HwndWrapper[Bime.exe;;fac186da-b2a2-4161-ae94-918b0959c57b]' vis=False rect=(0,0,0x0) text='MediaContextNotificationWindow'
+HWND=1246290 class='HwndWrapper[Bime.exe;;14b5b06f-beb9-4de3-9c0c-2505454a98d0]' vis=False rect=(0,0,0x0) text='SystemResourceNotifyWindow'
+HWND=4786010 class='.NET-BroadcastEventWindow.4.0.0.0.1a8c1fa.0' vis=False rect=(0,0,0x0) text='.NET-BroadcastEventWindow.4.0.0.0.1a8c1f'
+HWND=526518 class='CiceroUIWndFrame' vis=False rect=(160,160,160x160) text='CiceroUIWndFrame'
+HWND=1247332 class='MSCTFIME UI' vis=False rect=(0,0,0x0) text='MSCTFIME UI'
+HWND=2230046 class='IME' vis=False rect=(0,0,0x0) text='Default IME'
+HWND=657542 class='IME' vis=False rect=(0,0,0x0) text='Default IME'
+HWND=14681926 class='IME' vis=False rect=(0,0,0x0) text='Default IME'
+HWND=657594 class='CiceroUIWndFrame' vis=False rect=(0,0,0x0) text='CiceroUIWndFrame'
+
+== درخت UIA فعلی ==
+elementCount, 'تراکنش' دیده شد؟ = (54, False)
+
+== تست پرچم screen reader (قبلاً: False) ==
+بعد از 3s: elementCount, 'تراکنش'؟ = (54, False)
+بعد از 5s: elementCount, 'تراکنش'؟ = (54, False)
+پرچم screen reader به حالت قبل (خاموش) برگشت.

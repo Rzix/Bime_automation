@@ -1,0 +1,777 @@
+{
+  "depth": 400,
+  "interactive": false,
+  "hideDisabled": false,
+  "hideOffscreen": false,
+  "windows": [
+    {
+      "hwnd": 2360974,
+      "title": "شركت بيمه سرمد (سهامي عام) - سرور اصلي - فرم بيمه نامه مسئوليت شرکت هاي حمل و نقل بين المللي (CMR) -  نسخه 14.0.0.10 -  تاريخ روز 1405/08/19 برنامه بيمه",
+      "windowDpi": 120,
+      "scale": 1.25,
+      "dpiAwareness": "system-aware",
+      "coordinateSpace": "physical-screen-pixels",
+      "elementCount": 54,
+      "elements": [
+        {
+          "type": "Window",
+          "name": "شركت بيمه سرمد (سهامي عام) - سرور اصلي - فرم بيمه نامه مسئوليت شرکت هاي حمل و نقل بين المللي (CMR) -  نسخه 14.0.0.10 -  تاريخ روز 1405/08/19 برنامه بيمه",
+          "automationId": "mainWindow",
+          "className": "Window",
+          "isEnabled": true,
+          "isOffscreen": false,
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1020,
+          "children": [
+            {
+              "type": "Custom",
+              "className": "AppControlBox",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 20,
+              "y": 0,
+              "width": 120,
+              "height": 49,
+              "children": [
+                {
+                  "type": "Button",
+                  "automationId": "btnClose",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 20,
+                  "y": 4,
+                  "width": 40,
+                  "height": 40,
+                  "selector": "btnClose",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "automationId": "btnWindowState",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 60,
+                  "y": 4,
+                  "width": 40,
+                  "height": 40,
+                  "selector": "btnWindowState",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "automationId": "btnMinimize",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 100,
+                  "y": 4,
+                  "width": 40,
+                  "height": 40,
+                  "selector": "btnMinimize",
+                  "isInvokable": true
+                }
+              ],
+              "selector": "elm-0a80",
+              "isInvokable": false
+            },
+            {
+              "type": "Custom",
+              "automationId": "userProfile",
+              "className": "UserProfileView",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 170,
+              "y": 9,
+              "width": 30,
+              "height": 30,
+              "children": [
+                {
+                  "type": "Text",
+                  "name": "M332.64,64.58C313.18,43.57,286,32,256,32c-30.16,0-57.43,11.5-76.8,32.38-19.58,21.11-29.12,49.8-26.88,80.78C156.76,206.28,203.27,256,256,256s99.16-49.71,103.67-110.82C361.94,114.48,352.34,85.85,332.64,64.58ZM432,480H80A31,31,0,0,1,55.8,468.87 c-6.5-7.77-9.12-18.38-7.18-29.11C57.06,392.94,83.4,353.61,124.8,326c36.78-24.51,83.37-38,131.2-38s94.42,13.5,131.2,38c41.4,27.6,67.74,66.93,76.18,113.75,1.94,10.73-.68,21.34-7.18,29.11A31,31,0,0,1,432,480Z",
+                  "className": "Text",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 170,
+                  "y": 9,
+                  "width": 30,
+                  "height": 30,
+                  "selector": "lbl-m332646458c3131-5627",
+                  "isInvokable": false
+                },
+                {
+                  "type": "Button",
+                  "automationId": "tgb",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 170,
+                  "y": 9,
+                  "width": 30,
+                  "height": 30,
+                  "selector": "tgb",
+                  "toggleState": "off",
+                  "isInvokable": true
+                }
+              ],
+              "selector": "userProfile",
+              "isInvokable": false
+            },
+            {
+              "type": "Button",
+              "automationId": "Conversations",
+              "className": "Button",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 230,
+              "y": 12,
+              "width": 25,
+              "height": 25,
+              "selector": "Conversations",
+              "isInvokable": true
+            },
+            {
+              "type": "Button",
+              "name": "راهنما (F1)",
+              "automationId": "btnQuestion",
+              "className": "Button",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 275,
+              "y": 12,
+              "width": 20,
+              "height": 25,
+              "selector": "btnQuestion",
+              "isInvokable": true
+            },
+            {
+              "type": "Image",
+              "className": "Image",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "selector": "img-f8fc",
+              "isInvokable": false
+            },
+            {
+              "type": "Text",
+              "name": "شركت بيمه سرمد (سهامي عام) - سرور اصلي - فرم بيمه نامه مسئوليت شرکت هاي حمل و نقل بين المللي (CMR) -  نسخه 14.0.0.10 -  تاريخ روز 1405/08/19 برنامه بيمه",
+              "automationId": "txtTitle",
+              "className": "TextBlock",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 911,
+              "y": 14,
+              "width": 927,
+              "height": 21,
+              "selector": "txtTitle",
+              "isInvokable": false
+            },
+            {
+              "type": "Custom",
+              "automationId": "bime",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 0,
+              "y": 50,
+              "width": 1858,
+              "height": 970,
+              "selector": "bime",
+              "isInvokable": false
+            },
+            {
+              "type": "Custom",
+              "automationId": "TrayIconHost",
+              "className": "TrayPopupControl",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 0,
+              "y": 50,
+              "width": 1858,
+              "height": 970,
+              "selector": "TrayIconHost",
+              "isInvokable": false
+            },
+            {
+              "type": "Custom",
+              "automationId": "parent",
+              "className": "MainMenu",
+              "isEnabled": true,
+              "isOffscreen": false,
+              "x": 1858,
+              "y": 0,
+              "width": 62,
+              "height": 1020,
+              "children": [
+                {
+                  "type": "Button",
+                  "automationId": "tgbSubsys",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1868,
+                  "y": 10,
+                  "width": 30,
+                  "height": 30,
+                  "selector": "tgbSubsys",
+                  "toggleState": "off",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "name": "جستجو",
+                  "automationId": "btnSearch",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1874,
+                  "y": 66,
+                  "width": 30,
+                  "height": 30,
+                  "children": [
+                    {
+                      "type": "Text",
+                      "name": "جستجو",
+                      "className": "TextBlock",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1830,
+                      "y": 70,
+                      "width": 44,
+                      "height": 23,
+                      "selector": "lbl-46a1",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "btnSearch",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "name": "تاریخچه",
+                  "automationId": "btnRecent",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1735,
+                  "y": 809,
+                  "width": 175,
+                  "height": 40,
+                  "children": [
+                    {
+                      "type": "Text",
+                      "name": "تاریخچه",
+                      "className": "TextBlock",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1818,
+                      "y": 817,
+                      "width": 48,
+                      "height": 23,
+                      "selector": "lbl-41e9",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "btnRecent",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "name": "نشان شده",
+                  "automationId": "btnFave",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1735,
+                  "y": 859,
+                  "width": 175,
+                  "height": 40,
+                  "children": [
+                    {
+                      "type": "Text",
+                      "name": "نشان شده",
+                      "className": "TextBlock",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1803,
+                      "y": 867,
+                      "width": 62,
+                      "height": 23,
+                      "selector": "lbl-c3a9",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "btnFave",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "name": "تنظیمات",
+                  "automationId": "btnSettings",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1735,
+                  "y": 920,
+                  "width": 175,
+                  "height": 40,
+                  "children": [
+                    {
+                      "type": "Text",
+                      "name": "تنظیمات",
+                      "className": "TextBlock",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1815,
+                      "y": 928,
+                      "width": 52,
+                      "height": 24,
+                      "selector": "lbl-d18a",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "btnSettings",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Button",
+                  "name": "خروج",
+                  "automationId": "btnCloseApp",
+                  "className": "Button",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1735,
+                  "y": 970,
+                  "width": 175,
+                  "height": 40,
+                  "children": [
+                    {
+                      "type": "Text",
+                      "name": "خروج",
+                      "className": "TextBlock",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1833,
+                      "y": 978,
+                      "width": 33,
+                      "height": 24,
+                      "selector": "lbl-35b3",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "btnCloseApp",
+                  "isInvokable": true
+                },
+                {
+                  "type": "Text",
+                  "name": "M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289L19.7071 14.2929C20.0976 14.6834 20.0976 15.3166 19.7071 15.7071C19.3166 16.0976 18.6834 16.0976 18.2929 15.7071L12 9.41421L5.70711 15.7071 C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z",
+                  "automationId": "lblSubsysScrollUp",
+                  "className": "Text",
+                  "isEnabled": false,
+                  "isOffscreen": false,
+                  "x": 1873,
+                  "y": 118,
+                  "width": 30,
+                  "height": 30,
+                  "selector": "lblSubsysScrollUp",
+                  "isInvokable": false
+                },
+                {
+                  "type": "Text",
+                  "name": "M24.285,11.284L16,19.571l-8.285-8.288c-0.395-0.395-1.034-0.395-1.429,0 c-0.394,0.395-0.394,1.035,0,1.43l8.999,9.002l0,0l0,0c0.394,0.395,1.034,0.395,1.428,0l8.999-9.002 c0.394-0.395,0.394-1.036,0-1.431C25.319,10.889,24.679,10.889,24.285,11.284z",
+                  "automationId": "lblSubsysScrollDown",
+                  "className": "Text",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1873,
+                  "y": 763,
+                  "width": 30,
+                  "height": 30,
+                  "selector": "lblSubsysScrollDown",
+                  "isInvokable": false
+                },
+                {
+                  "type": "Pane",
+                  "automationId": "scrlSubsys",
+                  "className": "ScrollViewer",
+                  "isEnabled": true,
+                  "isOffscreen": false,
+                  "x": 1858,
+                  "y": 153,
+                  "width": 62,
+                  "height": 605,
+                  "children": [
+                    {
+                      "type": "List",
+                      "automationId": "lstSubsys",
+                      "className": "ListBox",
+                      "isEnabled": true,
+                      "isOffscreen": false,
+                      "x": 1858,
+                      "y": 153,
+                      "width": 62,
+                      "height": 722,
+                      "children": [
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 154,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 154,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-8dce",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-edb2",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 214,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 214,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-f25e",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-79f2",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 274,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 274,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-48f1",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-0305",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 334,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 334,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-04c5",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-0e2a",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 394,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 394,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-e11b",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-a8a1",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 454,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 454,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-e134",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-67aa",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 514,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 514,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-504e",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-6885",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 574,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 574,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-c1aa",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-5071",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 634,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 634,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-1089",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-4cb0",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 694,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 694,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-6029",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-1281",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": false,
+                          "x": 1859,
+                          "y": 754,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 754,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-1bcb",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-df24",
+                          "isInvokable": true
+                        },
+                        {
+                          "type": "ListItem",
+                          "name": "Tools.UIP.MenuItemVM",
+                          "className": "ListBoxItem",
+                          "isEnabled": true,
+                          "isOffscreen": true,
+                          "x": 1859,
+                          "y": 814,
+                          "width": 60,
+                          "height": 60,
+                          "children": [
+                            {
+                              "type": "Button",
+                              "automationId": "btnSubsys",
+                              "className": "Button",
+                              "isEnabled": true,
+                              "isOffscreen": false,
+                              "x": 1859,
+                              "y": 814,
+                              "width": 60,
+                              "height": 60,
+                              "selector": "btn-btnsubsys-f6af",
+                              "isInvokable": true
+                            }
+                          ],
+                          "selector": "itm-toolsuipmenuite-77d9",
+                          "isInvokable": true
+                        }
+                      ],
+                      "selector": "lstSubsys",
+                      "isInvokable": false
+                    }
+                  ],
+                  "selector": "scrlSubsys",
+                  "scrollDir": "v",
+                  "isInvokable": false
+                }
+              ],
+              "selector": "parent",
+              "isInvokable": false
+            }
+          ],
+          "selector": "win-mainwindow-4b75",
+          "isInvokable": false
+        }
+      ]
+    }
+  ]
+}
