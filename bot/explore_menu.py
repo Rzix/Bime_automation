@@ -1,0 +1,8 @@
+"""سازگاری مسیر قدیمی؛ ابزار اصلی در showTabel/explore_menu.py است."""
+import runpy
+from pathlib import Path
+
+
+if __name__ == "__main__":
+    runpy.run_path(str(Path(__file__).resolve().parents[1] / "showTabel" / "explore_menu.py"),
+                   run_name="__main__")

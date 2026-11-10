@@ -1,0 +1,234 @@
+"""
+winbot.py - ماژول کمکی برای اتوماسیون برنامهٔ ویندوزی با winapp
+
+استفاده در اسکریپت‌های دیگر:
+
+    import winbot
+    winbot.configure(app="Bime")
+
+    winbot.click("btnSubsys", nth=10)                 # دکمهٔ دهم با نام btnSubsys
+    winbot.populate_text("متن", "txtName", "replace")  # replace یا append
+    winbot.wait_for_content("شرکت سرمد", timeout=20)
+
+نام‌های camelCase هم موجودند: populateText, waitForContent
+
+نیازمندی‌ها (فقط برای populate_text و حالت mouse):
+    pip install pyautogui pyperclip
+"""
+
+from __future__ import annotations
+
+import re
+import subprocess
+import time
+from dataclasses import dataclass
+from typing import Optional
+
+__all__ = [
+    "configure", "inspect", "find", "is_visible", "click", "populate_text", "wait_for_content",
+    "populateText", "waitForContent", "Element", "ElementNotFound",
+]
+
+# ----------------------------------------------------------------- تنظیمات
+_cfg = {
+    "app": "Bime",
+    "depth": "100",
+    "click_mode": "invoke",   # "invoke" (winapp) یا "mouse" (کلیک واقعی با pyautogui)
+    "pause": 0.3,             # مکث کوتاه بعد از هر عمل (ثانیه)
+}
+
+
+def configure(**kwargs) -> None:
+    """مثال: configure(app="Bime", click_mode="mouse", pause=0.5)"""
+    for k, v in kwargs.items():
+        if k not in _cfg:
+            raise KeyError(f"تنظیم ناشناخته: {k}")
+        _cfg[k] = v
+
+
+class ElementNotFound(Exception):
+    pass
+
+
+# ----------------------------------------------------------------- ابزار متن
+def _norm(text: str) -> str:
+    return (text or "").replace("ك", "ک").replace("ي", "ی")
+
+
+def _winapp(args: list[str]) -> str:
+    r = subprocess.run(
+        ["winapp", *args],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    if r.returncode != 0:
+        raise RuntimeError(r.stderr.strip() or f"winapp {' '.join(args)} failed: {r.returncode}")
+    return _norm(r.stdout)
+
+
+# ----------------------------------------------------------------- درخت UI
+@dataclass
+class Element:
+    id: str
+    role: str
+    name: str
+    x: Optional[int] = None
+    y: Optional[int] = None
+    w: Optional[int] = None
+    h: Optional[int] = None
+
+    @property
+    def center(self):
+        if self.x is None:
+            return None
+        return self.x + self.w // 2, self.y + self.h // 2
+
+
+_START = re.compile(r"^\s*[\w.\-]+ [A-Z][A-Za-z]+\b")
+_LINE = re.compile(
+    r"^\s*(?P<id>[\w.\-]+) (?P<role>[A-Z][A-Za-z]+)"
+    r"(?: \[[^\]]*\])*"
+    r'(?: "(?P<name>.*)")?'
+    r"(?: \((?P<x>-?\d+),(?P<y>-?\d+) (?P<w>\d+)x(?P<h>\d+)\))?\s*$",
+    re.S,
+)
+
+
+def _parse(raw: str) -> list[Element]:
+    # خروجی winapp خطوط بلند را می‌شکند؛ خطوط ادامه را به خط قبلی وصل می‌کنیم
+    lines: list[str] = []
+    for ln in raw.splitlines():
+        if not ln.strip():
+            continue
+        if _START.match(ln) or not lines:
+            lines.append(ln)
+        else:
+            lines[-1] = lines[-1].rstrip() + " " + ln.strip()
+    out = []
+    for ln in lines:
+        m = _LINE.match(ln)
+        if not m:
+            continue
+        g = m.groupdict()
+        out.append(Element(
+            g["id"], g["role"], g["name"] or "",
+            *(int(g[k]) if g[k] else None for k in ("x", "y", "w", "h")),
+        ))
+    return out
+
+
+def inspect() -> list[Element]:
+    """درخت المنت‌های برنامه را می‌گیرد و به لیست Element تبدیل می‌کند."""
+    raw = _winapp(["ui", "inspect", "-a", _cfg["app"], "--depth", str(_cfg["depth"])])
+    return _parse(raw)
+
+
+def find(element: str, nth: int = 1, role: Optional[str] = None,
+         elements: Optional[list[Element]] = None) -> Element:
+    """
+    المنت را پیدا می‌کند. element می‌تواند باشد:
+      - id دقیق (مثل btnSearch یا btn-btnsubsys-f297)
+      - نام دقیق (مثل "جستجو" یا "btnSubsys")
+      - بخشی از نام
+    اگر چند المنت منطبق بود، به ترتیب بالا→پایین و چپ→راست مرتب می‌شوند و nth (از 1) انتخاب می‌کند.
+    """
+    els = elements if elements is not None else inspect()
+    key = _norm(element)
+    if role:
+        els = [e for e in els if e.role.lower() == role.lower()]
+
+    for test in (
+        lambda e: e.id == key,
+        lambda e: e.name == key,
+        lambda e: key in e.name or key in e.id,
+    ):
+        hits = [e for e in els if test(e)]
+        if hits:
+            hits.sort(key=lambda e: (e.y if e.y is not None else 0, e.x if e.x is not None else 0))
+            if nth > len(hits):
+                raise ElementNotFound(f"{element!r}: فقط {len(hits)} مورد هست، nth={nth} خارج از محدوده است")
+            return hits[nth - 1]
+    raise ElementNotFound(f"المنت پیدا نشد: {element!r}")
+
+
+def is_visible(element: str, elements: Optional[list[Element]] = None, nth: int = 1) -> bool:
+    """فقط وقتی True است که المنت پیدا شود و مختصات و اندازهٔ واقعی (غیر صفر) داشته باشد.
+    المنت‌های مخفی (collapse شده) ممکن است هنوز در درخت باشند ولی اندازه‌شان صفر یا خارج از صفحه است."""
+    try:
+        e = find(element, nth, elements=elements)
+    except ElementNotFound:
+        return False
+    return e.x is not None and (e.w or 0) > 0 and (e.h or 0) > 0 and e.x >= 0 and e.y >= 0
+
+
+# ----------------------------------------------------------------- عمل‌ها
+def _mouse_click(el: Element) -> None:
+    import pyautogui
+    c = el.center
+    if c is None:
+        raise ElementNotFound(f"{el.id} مختصات ندارد")
+    pyautogui.click(*c)
+
+
+def click(element: str, nth: int = 1, role: Optional[str] = None) -> Element:
+    """روی المنت کلیک می‌کند."""
+    el = find(element, nth, role)
+    if _cfg["click_mode"] == "mouse":
+        _mouse_click(el)
+    else:
+        _winapp(["ui", "invoke", el.id, "-a", _cfg["app"]])
+    time.sleep(_cfg["pause"])
+    return el
+
+
+def populate_text(text: str, element: str, mode: str = "replace",
+                  nth: int = 1, role: Optional[str] = None) -> Element:
+    """
+    متن را در یک فیلد می‌نویسد.
+    mode: "replace" (جایگزین متن قبلی) یا "append" (اضافه به انتهای متن)
+    نوشتن از طریق clipboard است تا فارسی درست وارد شود.
+    """
+    if mode not in ("replace", "append"):
+        raise ValueError('mode باید "replace" یا "append" باشد')
+    import pyautogui
+    import pyperclip
+
+    el = find(element, nth, role)
+    _mouse_click(el)            # فوکوس روی فیلد
+    time.sleep(_cfg["pause"])
+    if mode == "replace":
+        pyautogui.hotkey("ctrl", "a")
+    else:
+        pyautogui.hotkey("ctrl", "End")
+
+    old = pyperclip.paste()
+    try:
+        pyperclip.copy(text)
+        pyautogui.hotkey("ctrl", "v")
+        time.sleep(_cfg["pause"])
+    finally:
+        pyperclip.copy(old)
+    return el
+
+
+def wait_for_content(text: str, timeout: float = 30, interval: float = 0.5) -> bool:
+    """
+    منتظر می‌ماند تا text در درخت UI برنامه ظاهر شود.
+    اگر تا timeout نیامد، TimeoutError می‌دهد.
+    نکته: winapp متن‌های خیلی بلند را با … کوتاه می‌کند؛ از بخش ابتدایی متن استفاده کنید.
+    """
+    key = _norm(text)
+    end = time.monotonic() + timeout
+    while True:
+        raw = _winapp(["ui", "inspect", "-a", _cfg["app"], "--depth", str(_cfg["depth"])])
+        # خطوط شکسته را یکی می‌کنیم تا متن بین دو خط گم نشود
+        flat = " ".join(raw.split())
+        if key in raw or " ".join(key.split()) in flat:
+            return True
+        if time.monotonic() >= end:
+            raise TimeoutError(f"متن {text!r} تا {timeout} ثانیه ظاهر نشد")
+        time.sleep(interval)
+
+
+# ----------------------------------------------------------------- نام‌های camelCase
+populateText = populate_text
+waitForContent = wait_for_content
